@@ -1,0 +1,10 @@
+var today=new Date();
+console.log(today);
+var day=today.getDate();
+var month=today.getMonth();
+var year=today.getFullYear();
+console.log("Date is: "+day+"/"+month+"/"+year);
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+console.log("Time is: "+h+":"+m+":"+s);

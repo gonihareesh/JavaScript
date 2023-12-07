@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function school(sname,saddress,sfee){
+            this.sname=sname;
+            this.saddress=saddress;
+            this.sfee=sfee;
+            this.changeFee=changeFee;
+            function changeFee(otherfee){
+                this.sfee=otherfee;
+            }
+        }
+        s=new school("chaitanya concept school","praghati nagar",30000);
+        s1=new school("Narayana concept school","praghati nagar",25000);
+        document.write(s.sname+", "+s.saddress+" ,"+s.sfee);
+        document.write("<br>"+s1.sname+" "+s1.saddress+" "+s1.sfee);
+        document.write("<br>"+Object.values(s1));
+        s.changeFee(40000);
+        document.write("<br>"+s.sname+", "+s.saddress+" ,"+s.sfee);
+
+    </script>
+</body>
+</html>
