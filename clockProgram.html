@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <lable id="mylable"></lable>
+    <script>
+        const mylable=document.getElementById("mylable");
+        update();
+        setInterval(update,500);
+        function update(){
+        let date=new Date();
+       mylable.innerHTML=formateTime(date);
+        function formateTime(date){
+            let hours=date.getHours();
+            let minutes=date.getMinutes();
+            let seconds=date.getSeconds();
+            let meridiem = hours>=12 ? "pm":"am";
+            hours=(hours%12)||12; 
+            hours=formateZero(hours);
+            minutes=formateZero(minutes);
+            seconds=formateZero(seconds);
+
+        return `${hours}:${minutes}:${seconds} ${meridiem}`;
+        }
+        function formateZero(time){
+            time=time.toString();
+            return time.length< 2 ? "0"+time : time;
+        }
+    }
+    </script>
+</body>
+</html>
